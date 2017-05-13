@@ -33,19 +33,26 @@ public class Block_2_2 {
 		tmpArray2 = selectSortArray(tmpArray2);
 		showArray(tmpArray2);
 
-		System.out.println("Ex8 insert: ");
+		System.out.println("Ex9 insert: ");
 		tmpArray2 = inserSortArray(tmpArray2);
 		showArray(tmpArray2);
 
 	}
 
-	private static void showArray(int[] tmpArray1) {
+	protected static void showArray(int[] tmpArray1) {
+		System.out.print("{");
 		for (int i = 0; i < tmpArray1.length; i++) {
-			System.out.println(tmpArray1[i]);
+			System.out.print(tmpArray1[i]);
+			if (i < tmpArray1.length-1){
+				System.out.print(", ");
+			}
 		}
+		System.out.print("}");
+		System.out.println();
+
 	}
 
-	private static int[] inserSortArray(int[] tmpArray1) {
+	protected static int[] inserSortArray(int[] tmpArray1) {
 		int temp, j;
 		for (int i = 0; i < tmpArray1.length - 1; i++) {
 			if (tmpArray1[i] > tmpArray1[i + 1]) {
@@ -63,7 +70,7 @@ public class Block_2_2 {
 		return tmpArray1;
 	}
 
-	private static int minValueArray(int[] tmp) {
+	protected static int minValueArray(int[] tmp) {
 		int min = tmp[0];
 		for (int i = 1; i < tmp.length; i++) {
 			if (tmp[i] < min) {
@@ -73,7 +80,7 @@ public class Block_2_2 {
 		return min;
 	}
 
-	private static int maxValueArray(int[] tmp) {
+	protected static int maxValueArray(int[] tmp) {
 		int max = tmp[0];
 		for (int i = 1; i < tmp.length; i++) {
 			if (tmp[i] > max) {
@@ -83,7 +90,7 @@ public class Block_2_2 {
 		return max;
 	}
 
-	private static int minIndexValueArray(int[] tmp) {
+	protected static int minIndexValueArray(int[] tmp) {
 		int min = tmp[0];
 		int minIndex = 0;
 		for (int i = 1; i < tmp.length; i++) {
@@ -95,7 +102,7 @@ public class Block_2_2 {
 		return minIndex;
 	}
 
-	private static int maxIndexValueArray(int[] tmp) {
+	protected static int maxIndexValueArray(int[] tmp) {
 		int max = tmp[0];
 		int maxIndex = 0;
 		for (int i = 1; i < tmp.length; i++) {
@@ -107,7 +114,7 @@ public class Block_2_2 {
 		return maxIndex;
 	}
 
-	private static int sumElementArrayChet(int[] tmp) {
+	protected static int sumElementArrayChet(int[] tmp) {
 		int sum = 0;
 		for (int i = 0; i < tmp.length; i = i + 2) {
 			sum += tmp[i];
@@ -115,7 +122,7 @@ public class Block_2_2 {
 		return sum;
 	}
 
-	private static int sumElementArrayNechet(int[] tmp) {
+	protected static int sumElementArrayNechet(int[] tmp) {
 		int sum = 0;
 		for (int i = 1; i < tmp.length; i = i + 2) {
 			sum += tmp[i];
@@ -123,7 +130,7 @@ public class Block_2_2 {
 		return sum;
 	}
 
-	private static int[] revertArray(int[] tmp) {
+	protected static int[] revertArray(int[] tmp) {
 		int[] tmpArray1 = new int[tmp.length];
 		for (int i = tmp.length; i > 0; i--) {
 			tmpArray1[tmp.length - i] = tmp[i - 1];
@@ -131,7 +138,7 @@ public class Block_2_2 {
 		return tmpArray1;
 	}
 
-	private static int countElementArrayNechet(int[] tmp) {
+	protected static int countElementArrayNechet(int[] tmp) {
 		int count = 0;
 		for (int i = 0; i < tmp.length; i++) {
 			if (tmp[i] % 2 == 0) {
@@ -141,7 +148,7 @@ public class Block_2_2 {
 		return count;
 	}
 
-	private static int[] revertPartArray(int[] tmp) {
+	protected static int[] revertPartArray(int[] tmp) {
 
 		int[] tmpArray = new int[tmp.length];
 		int half = (int) Math.ceil((float) tmp.length / 2);
@@ -160,7 +167,7 @@ public class Block_2_2 {
 
 	}
 
-	private static int[] bubbleSortArray(int[] tmpArray1) {
+	protected static int[] bubbleSortArray(int[] tmpArray1) {
 		for (int i = 0; i < tmpArray1.length; i++) {
 			for (int j = 0; j < tmpArray1.length; j++) {
 				if (tmpArray1[i] < tmpArray1[j]) {
@@ -173,7 +180,7 @@ public class Block_2_2 {
 		return tmpArray1;
 	}
 
-	private static int[] selectSortArray(int[] tmpArray1) {
+	protected static int[] selectSortArray(int[] tmpArray1) {
 		for (int min = 0; min < tmpArray1.length - 1; min++) {
 			int least = min;
 			for (int j = min + 1; j < tmpArray1.length; j++) {
